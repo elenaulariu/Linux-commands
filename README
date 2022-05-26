@@ -1,0 +1,44 @@
+    Tema 1 s-a axat pe folosirea pointerilor, avand de implementat 
+principalele comenzi pentru fisiere si directoare din Linux, 
+precum touch, mkdir, cd, tree etc. folosind structuri de tipul 
+liste simplu inlantuite.
+    Am preferat sa implementez fiecare functie fara ajutorul unor 
+functii auxiliare, cu exceptia functiei rmdir, unde am folosit
+doua functii suplimentare, rmFiles care stergea toate fisierele 
+dintr-un director dat, si rmDirs care stergea in mod recursiv 
+toate directoarele dintr-un director dat, dar si toate fisierele
+si directoarele fiecarui director in parte.
+    Pentru functiile touch si mkdir au existat 3 cazuri, daca
+directorul parinte era gol, daca fisierul sau directorul exista
+deja si daca existau alte fisiere sau directoare, si nu a fost 
+gasit numele, caz in care acesta se adauga la finalul listei.
+    Functia ls parcurgea cele doua liste (cea a directoarelor si
+cea a fisierelor), si afisa numele fiecarui element.
+    Functiile rm si rmdir tratau la randul lor, 3 cazuri, daca 
+directorul parinte era gol, daca nu exista fisierul/directorul
+cautat si daca exista fisierul/directorul, caz care se impartea
+la randul lui in doua, daca fisierul/directorul era primul in
+lista, sau nu.
+    Functia cd a fost diferita deoarece s-a folosit pointer la
+director pentru a putea fi schimbat. Cazurile au fost asemanatoare
+cu celelalte cu exceptia optiunii "cd .." care presupunea
+schimbarea in directorul parinte, daca acesta exista.
+    Functia tree afiseaza in mod recursiv interiorul directorului
+dat, in timp ce functia stop, dezaloca structura de directoare si
+fisiere, si opreste executia programului.
+    Functia pwd returna un sir de cractere, format in mod recursiv,
+pornind de la directorul home, si ajungand la cel curent. 
+    Functia mv, cea care mi s-a parut si cea mai dificil de 
+implementat din cauza numarului mare de cazuri diferite, am 
+impartit-o in 5 mari cazuri, cazul 1 verifica daca exista deja un 
+fisier cu numele dorit in urma schimbari, cazul 2 verifica acelasi
+lucru, dar pentru directoare, cazul 3 verifica daca este gasit 
+numele printre fisiere, si daca da este schimbat si mutat la 
+finalul listei, cazul 4 realizeaza acelasi lucru dar pentru 
+directoare, iar cazul 5 afiseaza un mesaj daca nu se gaseste 
+numele nici in fisiere, nici in directoare. 
+    O alta problema a fost cea a alocarii si dezalocarii memoriei,
+problema pe care am rezolvat-o de cele mai multe ori cu ajutorul 
+valgrind, care mi-a dat cateva hinturi importante.
+    Per total tema mi s-a parut abordabila, si nu mi-a luat foarte
+mult timp sa o rezolv.
